@@ -1,10 +1,13 @@
 package com.android.khaled.elnota.model;
 
+import android.arch.persistence.db.SupportSQLiteDatabase;
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.arch.persistence.room.TypeConverters;
 import android.content.Context;
+import android.os.AsyncTask;
+import android.support.annotation.NonNull;
 
 import com.android.khaled.elnota.controller.TaskDao;
 
@@ -14,6 +17,7 @@ import com.android.khaled.elnota.controller.TaskDao;
 public abstract class AppDatabase extends RoomDatabase {
     public abstract TaskDao taskDao();
     private static AppDatabase INSTANCE;
+
 
     public static AppDatabase getDatabase(final Context context){
         if (INSTANCE == null){

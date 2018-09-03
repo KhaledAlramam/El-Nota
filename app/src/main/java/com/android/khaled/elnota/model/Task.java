@@ -21,7 +21,14 @@ public class Task {
     private Date taskDate;
 
     @ColumnInfo(name = "rate")
-    private float rate;
+    private double rate;
+
+
+    public Task(String taskName, Date taskDate, double rate) {
+        this.taskName = taskName;
+        this.taskDate = taskDate;
+        this.rate = rate;
+    }
 
     public int getId() {
         return id;
@@ -47,7 +54,7 @@ public class Task {
         this.taskDate = taskDate;
     }
 
-    public float getRate() {
+    public double getRate() {
         return rate;
     }
 
